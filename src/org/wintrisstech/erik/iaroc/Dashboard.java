@@ -137,7 +137,7 @@ public class Dashboard extends IOIOActivity implements TextToSpeech.OnInitListen
                  */
 //                kalina = new Lada(ioio, iRobotCreate, Dashboard.this);
 //                kalina.initialize();
-                JackMagic ferrari = new JackMagic(ioio, iRobotCreate, Dashboard.this);
+                CookieMonster ferrari = new CookieMonster(ioio, iRobotCreate, Dashboard.this);
 //                ferrari.initialize();
                 ferrari.run();
             }

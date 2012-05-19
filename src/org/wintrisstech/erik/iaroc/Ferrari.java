@@ -53,7 +53,7 @@ public abstract class Ferrari extends IRobotCreateAdapter implements Runnable
     private int row;
     private int column;
     private boolean running = true;
-    private final static int SECOND = 1000; // number of millis in a second
+    protected static final int SECOND = 1000; // number of millis in a second
     private int mode = 0;
     private int forwardDistance = 0;
     private int defaultSpeed = 200;
@@ -74,33 +74,6 @@ public abstract class Ferrari extends IRobotCreateAdapter implements Runnable
         super(create);
         ultraSonicSensors = new UltraSonicSensors(ioio);
         this.dashboard = dashboard;
-    }
-
-    
-    /**
-     * To run this test, place the Ferrari in a cell surrounded by 4 walls. <p>
-     * Note: The sensors draw power from the Create's battery. Make sure it is
-     * charged.
-     */
-    private void testUltraSonicSensors()
-    {
-        dashboard.log("Starting ultrasonic test.");
-        long endTime = System.currentTimeMillis() + 20 * SECOND;
-        while (System.currentTimeMillis() < endTime)
-        {
-            try
-            {
-                ultraSonicSensors.readUltrasonicSensors();
-            } catch (ConnectionLostException ex)
-            {
-                //TODO
-            } catch (InterruptedException ex)
-            {
-                //TODO
-            }
-            SystemClock.sleep(500);
-        }
-        dashboard.log("Ultrasonic test ended.");
     }
 
     /**
